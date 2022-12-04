@@ -7,15 +7,6 @@ const getMostPopular = async (req, res, next) => {
   res.status(StatusCodes.OK).json(topics);
 }
 
-const createTopic = async (req, res, next) => {
-  const { name } = req.body;
-  
-  const newTopic = await topicData.createTopic(name);
-
-  res.status(StatusCodes.CREATED).json(newTopic);
-}
-
 module.exports = {
   getMostPopular,
-  createTopic,
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TopicService } from '../core/services/topic.service';
+import { ITopic } from '../interfaces/topic';
 
 @Component({
   selector: 'app-home',
@@ -7,20 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  topics: Array<string> = [];
+  popularTopics: Array<string> = [];
+  manualTopic: string = "";
 
-  constructor() { }
+  constructor(
+    private topicService: TopicService,
+  ) { }
 
   ngOnInit() {
-    this.topics = [
-      "topic 1",
-      "topic 2",
-      "topic 3",
-      "topic 4",
-      "topic 5",
-      "topic 6",
-      "topic 7",
-    ]
+    this.topicService.getMostPopularTopics().subscribe((popularTopics) => {
+      this.popularTopics = popularTopics;
+    });
   }
-
+  
 }
