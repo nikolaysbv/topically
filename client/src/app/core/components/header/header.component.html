@@ -1,0 +1,19 @@
+<header>
+  <div class="header-content">
+    <div class="options-left">
+      <div class="logo">
+        <a [routerLink]="['']">
+          <img src="/assets/images/logo.png" alt="logo">
+        </a>
+      </div>
+    </div>
+    <div class="options-right">
+      <button mat-button type="button" [routerLink]="['login']">
+        Register
+      </button>
+      <button mat-flat-button type="button" color="primary" routerLink="/login">
+        Sign In
+      </button>
+    </div>
+  </div>
+</header>
