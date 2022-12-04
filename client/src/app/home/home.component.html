@@ -1,1 +1,35 @@
-Home page
+<article class="home">
+  <section class="popular-topics">
+    <h2>Choose one of popular topics...</h2>
+    <div class="topic-container">
+      <div class="topic-group">
+        <div *ngFor="let topic of topics.slice(0,2)">
+          <button mat-button type="button" color="primary">
+            {{ topic }}
+          </button>
+        </div>
+      </div>
+      <div class="topic-group">
+        <div *ngFor="let topic of topics.slice(2,5)">
+          <button mat-button type="button" color="primary">
+            {{ topic }}
+          </button>
+        </div>
+      </div>
+      <div class="topic-group">
+        <div *ngFor="let topic of topics.slice(5,7)">
+          <button mat-button type="button" color="primary">
+            {{ topic }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="manual-topic">
+    <h2>...or enter a topic of your choice.</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Topic</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </section>
+</article>
