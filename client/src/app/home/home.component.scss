@@ -1,7 +1,7 @@
 @import '../../variables';
 
 .home {
-  height: calc(100vh - #{$headerHeight});
+  height: $pageHeight;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
